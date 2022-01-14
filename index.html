@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CNN calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <!-- title -->
+    <section class="section">
+      <div class="container">
+        <h1 class="title">
+          Convolution calculator
+        </h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+
+
+        <div class="field is-horizontal">
+          <div class="field-label is-large">
+            <label class="label">Input</label>
+          </div>
+          <div class="field-body">
+
+            <div class="field mx-2 my-2 is-narrow">
+              <label class="label">channel</label>
+              <div class="control">
+                <input id="inputChannel" class="input" type="number" value="1">
+              </div>
+            </div>
+            <div class="field mx-2 my-2 is-narrow">
+              <label class="label">height</label>
+              <div class="control">
+                <input id="inputHeight" class="input" type="number" value="28">
+              </div>
+            </div>
+            <div class="field mx-2 my-2 is-narrow">
+              <label class="label">width</label>
+              <div class="control">
+                <input id="inputWidth" class="input" type="number" value="28">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="field is-horizontal">
+          <div class="field-label is-large">
+            <label class="label">Convolution</label>
+          </div>
+          <div class="field-body">
+
+            <div class="field mx-2 my-2 is-narrow">
+              <label class="label has-text-centered">Channel</label>
+              <div class="control">
+                <input id="convChannel" class="input is-link" type="number" value="1">
+              </div>
+            </div>
+            <div class="field mx-2 my-2 is-narrow">
+              <label class="label has-text-centered">Kernel</label>
+              <div class="control">
+                <input id="convKernel" class="input is-link" type="number" value="3">
+              </div>
+            </div>
+            <div class="field mx-2 my-2 is-narrow">
+              <label class="label has-text-centered">Padding</label>
+              <div class="control">
+                <input id="convPadding" class="input is-link" type="number" value="1">
+              </div>
+            </div>
+            <div class="field mx-2 my-2 is-narrow">
+              <label class="label has-text-centered">Stride</label>
+              <div class="control">
+                <input id="convStride" class="input is-link" type="number" value="1">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="field is-horizontal">
+          <div class="field-label is-large">
+            <label class="label">Shapes</label>
+          </div>
+          <div class="field-body">
+
+            <div class="tile is-ancestor">
+              <div class="tile is-5 is-parent">
+                <div class="tile is-child box">
+                  <p class="title is-5">Input</p>
+                    <div class="columns is-centered">
+
+                      <article class="message is-small is-dark mx-1">
+                        <div class="message-header">
+                          <p>Channel</p>
+                        </div>
+                        <div id="shapesInputChannel" class="message-body is-size-6 has-text-weight-semibold">
+                          64
+                        </div>
+                      </article>
+                      <div class="is-size-4 has-text-weight-semibold mt-5">
+                        ×
+                      </div>
+                      <article class="message is-small is-dark mx-1">
+                        <div class="message-header">
+                          <p>Height</p>
+                        </div>
+                        <div id="shapesInputHeight" class="message-body is-size-6 has-text-weight-semibold">
+                          64
+                        </div>
+                      </article>
+                      <div class="is-size-4 has-text-weight-semibold mt-5">
+                        ×
+                      </div>
+                      <article class="message is-small is-dark mx-1">
+                        <div class="message-header">
+                          <p>Width</p>
+                        </div>
+                        <div id="shapesInputWidth" class="message-body is-size-6 has-text-weight-semibold">
+                          64
+                        </div>
+                      </article>
+                      <div></div>
+
+                    </div>
+                </div>
+              </div>
+
+              <div class="tile is-5 is-parent">
+                <div class="tile is-child box">
+                  <p class="title is-5">Output</p>
+                    <div class="columns is-centered">
+
+                      <article class="message is-small is-dark mx-1">
+                        <div class="message-header">
+                          <p>Channel</p>
+                        </div>
+                        <div id="shapesOutputChannel" class="message-body is-size-6 has-text-weight-semibold">
+                          64
+                        </div>
+                      </article>
+                      <div class="is-size-4 has-text-weight-semibold mt-5">
+                        ×
+                      </div>
+                      <article class="message is-small is-dark mx-1">
+                        <div class="message-header">
+                          <p>Height</p>
+                        </div>
+                        <div id="shapesOutputHeight" class="message-body is-size-6 has-text-weight-semibold">
+                          64
+                        </div>
+                      </article>
+                      <div class="is-size-4 has-text-weight-semibold mt-5">
+                        ×
+                      </div>
+                      <article class="message is-small is-dark mx-1">
+                        <div class="message-header">
+                          <p>Width</p>
+                        </div>
+                        <div id="shapesOutputWidth" class="message-body is-size-6 has-text-weight-semibold">
+                          64
+                        </div>
+                      </article>
+                      <div></div>
+
+                      
+                    </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+  </body>
+</html>
+
+
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    updateAll();
+  }, false);
+
+  function updateAll() {
+    toShapesOutputChannel();
+    toShapesOutput();
+    toShapesInput();
+  }
+
+  const inputChannel = document.getElementById('inputChannel');
+  const inputHeight = document.getElementById('inputHeight');
+  const inputWidth = document.getElementById('inputWidth');
+
+  const shapesInputChannel = document.getElementById('shapesInputChannel');
+  const shapesInputHeight = document.getElementById('shapesInputHeight');
+  const shapesInputWidth = document.getElementById('shapesInputWidth');
+
+  inputChannel.addEventListener('change', updateAll);
+  inputHeight.addEventListener('change', updateAll);
+  inputWidth.addEventListener('change', updateAll);
+
+  function toShapesInput() {
+    toShapesInputChannel();
+    toShapesInputHeight();
+    toShapesInputWidth();
+  }
+
+  function toShapesInputChannel() {
+    txt = inputChannel.value;
+    shapesInputChannel.textContent = txt;
+  }
+
+  function toShapesInputHeight() {
+    txt = inputHeight.value;
+    shapesInputHeight.textContent = txt;
+  }
+
+  function toShapesInputWidth() {
+    txt = inputWidth.value;
+    shapesInputWidth.textContent = txt;
+  }
+
+
+  const convChannel = document.getElementById('convChannel');
+  const convKernel = document.getElementById('convKernel');
+  const convPadding = document.getElementById('convPadding');
+  const convStride = document.getElementById('convStride');
+
+  const shapesOutputChannel = document.getElementById('shapesOutputChannel');
+  const shapesOutputHeight = document.getElementById('shapesOutputHeight');
+  const shapesOutputWidth = document.getElementById('shapesOutputWidth');
+
+  convChannel.addEventListener('change', toShapesOutputChannel);
+  convKernel.addEventListener('change', updateAll);
+  convPadding.addEventListener('change', updateAll);
+  convStride.addEventListener('change', updateAll);
+
+  function toShapesOutputChannel() {
+    txt = convChannel.value;
+    shapesOutputChannel.textContent = txt;
+  }
+
+  function toShapesOutput() {
+    toShapesOutputHeight();
+    toShapesOutputWidth();
+  }
+
+  function toShapesOutputHeight() {
+    input = inputHeight.value;
+    output = calc(input);
+    shapesOutputHeight.textContent = output;
+  }
+
+  function toShapesOutputWidth() {
+    input = inputWidth.value;
+    output = calc(input);
+    shapesOutputWidth.textContent = output;
+  }
+
+  function calc(input) {
+    input = parseFloat(input)
+    kernel = parseFloat(convKernel.value)
+    padding = parseFloat(convPadding.value)
+    stride = parseFloat(convStride.value)
+    output = ((input + (2 * padding) - kernel) / stride) + 1
+    output = Math.floor(output)
+    return output
+  }
+
+</script>
