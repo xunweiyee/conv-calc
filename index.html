@@ -24,107 +24,113 @@
 
         <div class="field is-horizontal">
           <div class="field-label is-large">
-            <label class="label">Input</label>
+            <label class="label has-text-grey">Input</label>
           </div>
           <div class="field-body">
+            <div class="columns is-centered is-mobile">
 
-            <div class="field mx-2 my-2 is-narrow">
-              <label class="label">channel</label>
-              <div class="control">
-                <input id="inputChannel" class="input" type="number" value="1">
+              <div class="field mx-2 my-2 is-narrow">
+                <label class="label has-text-centered has-text-weight-normal has-text-grey">Channel</label>
+                <div class="control">
+                  <input id="inputChannel" class="input" type="number" value="1">
+                </div>
               </div>
-            </div>
-            <div class="field mx-2 my-2 is-narrow">
-              <label class="label">height</label>
-              <div class="control">
-                <input id="inputHeight" class="input" type="number" value="28">
+              <div class="field mx-2 my-2 is-narrow">
+                <label class="label has-text-centered has-text-weight-normal has-text-grey">Height</label>
+                <div class="control">
+                  <input id="inputHeight" class="input" type="number" value="28">
+                </div>
               </div>
-            </div>
-            <div class="field mx-2 my-2 is-narrow">
-              <label class="label">width</label>
-              <div class="control">
-                <input id="inputWidth" class="input" type="number" value="28">
+              <div class="field mx-2 my-2 is-narrow">
+                <label class="label has-text-centered has-text-weight-normal has-text-grey">Width</label>
+                <div class="control">
+                  <input id="inputWidth" class="input" type="number" value="28">
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
 
 
         <div class="field is-horizontal">
           <div class="field-label is-large">
-            <label class="label">Convolution</label>
+            <label class="label has-text-grey">Convolution</label>
           </div>
           <div class="field-body">
 
+                    <div class="columns is-centered is-mobile">
+
             <div class="field mx-2 my-2 is-narrow">
-              <label class="label has-text-centered">Channel</label>
+              <label class="label has-text-centered has-text-weight-normal">Channel</label>
               <div class="control">
                 <input id="convChannel" class="input is-link" type="number" value="1">
               </div>
             </div>
             <div class="field mx-2 my-2 is-narrow">
-              <label class="label has-text-centered">Kernel</label>
+              <label class="label has-text-centered has-text-weight-normal">Kernel</label>
               <div class="control">
                 <input id="convKernel" class="input is-link" type="number" value="3">
               </div>
             </div>
             <div class="field mx-2 my-2 is-narrow">
-              <label class="label has-text-centered">Padding</label>
+              <label class="label has-text-centered has-text-weight-normal">Padding</label>
               <div class="control">
                 <input id="convPadding" class="input is-link" type="number" value="1">
               </div>
             </div>
             <div class="field mx-2 my-2 is-narrow">
-              <label class="label has-text-centered">Stride</label>
+              <label class="label has-text-centered has-text-weight-normal">Stride</label>
               <div class="control">
                 <input id="convStride" class="input is-link" type="number" value="1">
               </div>
             </div>
 
           </div>
+
+          </div>
         </div>
 
 
         <div class="field is-horizontal">
           <div class="field-label is-large">
-            <label class="label">Shapes</label>
+            <label class="label has-text-grey">Shapes</label>
           </div>
-          <div class="field-body">
+          <div class="field-body mt-4">
 
             <div class="tile is-ancestor">
               <div class="tile is-5 is-parent">
                 <div class="tile is-child box">
                   <p class="title is-5">Input</p>
-                    <div class="columns is-centered">
+                    <div class="columns is-centered is-mobile">
 
-                      <article class="message is-small is-dark mx-1">
+                      <article class="message is-small mx-1">
                         <div class="message-header">
                           <p>Channel</p>
                         </div>
-                        <div id="shapesInputChannel" class="message-body is-size-6 has-text-weight-semibold">
+                        <div id="shapesInputChannel" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
                           64
                         </div>
                       </article>
                       <div class="is-size-4 has-text-weight-semibold mt-5">
                         ×
                       </div>
-                      <article class="message is-small is-dark mx-1">
+                      <article class="message is-small mx-1">
                         <div class="message-header">
                           <p>Height</p>
                         </div>
-                        <div id="shapesInputHeight" class="message-body is-size-6 has-text-weight-semibold">
+                        <div id="shapesInputHeight" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
                           64
                         </div>
                       </article>
                       <div class="is-size-4 has-text-weight-semibold mt-5">
                         ×
                       </div>
-                      <article class="message is-small is-dark mx-1">
+                      <article class="message is-small mx-1">
                         <div class="message-header">
                           <p>Width</p>
                         </div>
-                        <div id="shapesInputWidth" class="message-body is-size-6 has-text-weight-semibold">
+                        <div id="shapesInputWidth" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
                           64
                         </div>
                       </article>
@@ -137,35 +143,35 @@
               <div class="tile is-5 is-parent">
                 <div class="tile is-child box">
                   <p class="title is-5">Output</p>
-                    <div class="columns is-centered">
+                    <div class="columns is-centered is-mobile">
 
-                      <article class="message is-small is-dark mx-1">
+                      <article class="message is-small is-dark mx-1 is-flex-grow-0">
                         <div class="message-header">
                           <p>Channel</p>
                         </div>
-                        <div id="shapesOutputChannel" class="message-body is-size-6 has-text-weight-semibold">
+                        <div id="shapesOutputChannel" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
                           64
                         </div>
                       </article>
                       <div class="is-size-4 has-text-weight-semibold mt-5">
                         ×
                       </div>
-                      <article class="message is-small is-dark mx-1">
+                      <article class="message is-small mx-1">
                         <div class="message-header">
                           <p>Height</p>
                         </div>
-                        <div id="shapesOutputHeight" class="message-body is-size-6 has-text-weight-semibold">
+                        <div id="shapesOutputHeight" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
                           64
                         </div>
                       </article>
                       <div class="is-size-4 has-text-weight-semibold mt-5">
                         ×
                       </div>
-                      <article class="message is-small is-dark mx-1">
+                      <article class="message is-small mx-1">
                         <div class="message-header">
                           <p>Width</p>
                         </div>
-                        <div id="shapesOutputWidth" class="message-body is-size-6 has-text-weight-semibold">
+                        <div id="shapesOutputWidth" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
                           64
                         </div>
                       </article>
