@@ -12,9 +12,21 @@
     <!-- title -->
     <section class="section">
       <div class="container">
-        <h1 class="title">
-          Convolution calculator
-        </h1>
+        <div class="columns">
+          <div class="column is-three-quarters">
+            <h1 class="title">
+              Convolution calculator
+            </h1>
+          </div>
+          <div class="columns is-mobile">
+            <div class="column is-narrow">
+              <button id="copyButton" class="button is-light" onclick="copyShapes()">Copy</button>
+            </div>
+            <div class="column is-narrow">
+              <button id="setInput" class="button is-light" onclick="setInput()">Use output as input</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -99,87 +111,91 @@
               <div class="tile is-5 is-parent">
                 <div class="tile is-child box">
                   <p class="title is-5">Input</p>
-                    <div class="columns is-centered is-mobile">
+                  <div class="columns is-centered is-mobile">
 
-                      <article class="message is-small mx-1">
-                        <div class="message-header">
-                          <p>Channel</p>
-                        </div>
-                        <div id="shapesInputChannel" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
-                          64
-                        </div>
-                      </article>
-                      <div class="is-size-4 has-text-weight-semibold mt-6">
-                        ×
+                    <article class="message is-small mx-1">
+                      <div class="message-header">
+                        <p>Channel</p>
                       </div>
-                      <article class="message is-small mx-1">
-                        <div class="message-header">
-                          <p>Height</p>
-                        </div>
-                        <div id="shapesInputHeight" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
-                          64
-                        </div>
-                      </article>
-                      <div class="is-size-4 has-text-weight-semibold mt-6">
-                        ×
+                      <div id="shapesInputChannel" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
+                        64
                       </div>
-                      <article class="message is-small mx-1">
-                        <div class="message-header">
-                          <p>Width</p>
-                        </div>
-                        <div id="shapesInputWidth" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
-                          64
-                        </div>
-                      </article>
-                      <div></div>
-
+                    </article>
+                    <div class="is-size-4 has-text-weight-semibold mt-6">
+                      ×
                     </div>
+                    <article class="message is-small mx-1">
+                      <div class="message-header">
+                        <p>Height</p>
+                      </div>
+                      <div id="shapesInputHeight" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
+                        64
+                      </div>
+                    </article>
+                    <div class="is-size-4 has-text-weight-semibold mt-6">
+                      ×
+                    </div>
+                    <article class="message is-small mx-1">
+                      <div class="message-header">
+                        <p>Width</p>
+                      </div>
+                      <div id="shapesInputWidth" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
+                        64
+                      </div>
+                    </article>
+                    <div></div>
+
+                  </div>
                 </div>
               </div>
 
               <div class="tile is-5 is-parent">
                 <div class="tile is-child box">
                   <p class="title is-5">Output</p>
-                    <div class="columns is-centered is-mobile">
+                  <div class="columns is-centered is-mobile">
 
-                      <article class="message is-small mx-1 is-flex-grow-0">
-                        <div class="message-header">
-                          <p>Channel</p>
-                        </div>
-                        <div id="shapesOutputChannel" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
-                          64
-                        </div>
-                      </article>
-                      <div class="is-size-4 has-text-weight-semibold mt-6">
-                        ×
+                    <article class="message is-small mx-1 is-flex-grow-0">
+                      <div class="message-header">
+                        <p>Channel</p>
                       </div>
-                      <article class="message is-small mx-1">
-                        <div class="message-header">
-                          <p>Height</p>
-                        </div>
-                        <div id="shapesOutputHeight" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
-                          64
-                        </div>
-                      </article>
-                      <div class="is-size-4 has-text-weight-semibold mt-6">
-                        ×
+                      <div id="shapesOutputChannel" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
+                        64
                       </div>
-                      <article class="message is-small mx-1">
-                        <div class="message-header">
-                          <p>Width</p>
-                        </div>
-                        <div id="shapesOutputWidth" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
-                          64
-                        </div>
-                      </article>
-                      <div></div>
-
-                      
+                    </article>
+                    <div class="is-size-4 has-text-weight-semibold mt-6">
+                      ×
                     </div>
+                    <article class="message is-small mx-1">
+                      <div class="message-header">
+                        <p>Height</p>
+                      </div>
+                      <div id="shapesOutputHeight" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
+                        64
+                      </div>
+                    </article>
+                    <div class="is-size-4 has-text-weight-semibold mt-6">
+                      ×
+                    </div>
+                    <article class="message is-small mx-1">
+                      <div class="message-header">
+                        <p>Width</p>
+                      </div>
+                      <div id="shapesOutputWidth" class="message-body is-size-6 has-text-centered has-text-weight-semibold">
+                        64
+                      </div>
+                    </article>
+                    <div></div>
 
+                    
+                  </div>
                 </div>
               </div>
             </div>
+
+
+
+
+
 
           </div>
         </div>
@@ -225,17 +241,17 @@
 
   function toShapesInputChannel() {
     txt = inputChannel.value;
-    shapesInputChannel.textContent = txt;
+    shapesInputChannel.innerText = txt;
   }
 
   function toShapesInputHeight() {
     txt = inputHeight.value;
-    shapesInputHeight.textContent = txt;
+    shapesInputHeight.innerText = txt;
   }
 
   function toShapesInputWidth() {
     txt = inputWidth.value;
-    shapesInputWidth.textContent = txt;
+    shapesInputWidth.innerText = txt;
   }
 
 
@@ -255,7 +271,7 @@
 
   function toShapesOutputChannel() {
     txt = convChannel.value;
-    shapesOutputChannel.textContent = txt;
+    shapesOutputChannel.innerText = txt;
   }
 
   function toShapesOutput() {
@@ -266,13 +282,13 @@
   function toShapesOutputHeight() {
     input = inputHeight.value;
     output = calc(input);
-    shapesOutputHeight.textContent = output;
+    shapesOutputHeight.innerText = output;
   }
 
   function toShapesOutputWidth() {
     input = inputWidth.value;
     output = calc(input);
-    shapesOutputWidth.textContent = output;
+    shapesOutputWidth.innerText = output;
   }
 
   function calc(input) {
@@ -283,6 +299,33 @@
     output = ((input + (2 * padding) - kernel) / stride) + 1
     output = Math.floor(output)
     return output
+  }
+
+  const copyButton = document.getElementById('copyButton');
+
+  function copyShapes() {
+    inputChannelValue = shapesInputChannel.innerText 
+    inputHeightValue = shapesInputHeight.innerText 
+    inputWidthValue = shapesInputWidth.innerText 
+    outputChannelValue = shapesOutputChannel.innerText 
+    outputHeightValue = shapesOutputHeight.innerText 
+    outputWidthValue = shapesOutputWidth.innerText 
+
+    const txt = new String(`${inputChannelValue}x${inputHeightValue}x${inputWidthValue} -> ${outputChannelValue}x${outputHeightValue}x${outputWidthValue}`);
+    navigator.clipboard.writeText(txt);
+    copyButton.innerText = `${outputChannelValue}x${outputHeightValue}x${outputWidthValue}`
+  }
+
+  function setInput() {
+    outputChannelValue = shapesOutputChannel.innerText
+    outputHeightValue = shapesOutputHeight.innerText
+    outputWidthValue = shapesOutputWidth.innerText
+
+    inputChannel.value = outputChannelValue
+    inputHeight.value = outputHeightValue
+    inputWidth.value = outputWidthValue
+
+    toShapesInput()
   }
 
 </script>
