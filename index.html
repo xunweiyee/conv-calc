@@ -212,83 +212,85 @@
 <script>
 
   document.addEventListener('DOMContentLoaded', function() {
-    updateAll();
-  }, false);
+    updateAll()
+  }, false)
 
   function updateAll() {
-    toShapesOutputChannel();
-    toShapesOutput();
-    toShapesInput();
+    toShapesOutput()
+    toShapesInput()
   }
 
-  const inputChannel = document.getElementById('inputChannel');
-  const inputHeight = document.getElementById('inputHeight');
-  const inputWidth = document.getElementById('inputWidth');
+  const inputChannel = document.getElementById('inputChannel')
+  const inputHeight = document.getElementById('inputHeight')
+  const inputWidth = document.getElementById('inputWidth')
 
-  const shapesInputChannel = document.getElementById('shapesInputChannel');
-  const shapesInputHeight = document.getElementById('shapesInputHeight');
-  const shapesInputWidth = document.getElementById('shapesInputWidth');
+  const shapesInputChannel = document.getElementById('shapesInputChannel')
+  const shapesInputHeight = document.getElementById('shapesInputHeight')
+  const shapesInputWidth = document.getElementById('shapesInputWidth')
 
-  inputChannel.addEventListener('change', updateAll);
-  inputHeight.addEventListener('change', updateAll);
-  inputWidth.addEventListener('change', updateAll);
+  inputChannel.addEventListener('change', updateAll)
+  inputHeight.addEventListener('change', updateAll)
+  inputWidth.addEventListener('change', updateAll)
 
   function toShapesInput() {
-    toShapesInputChannel();
-    toShapesInputHeight();
-    toShapesInputWidth();
+    toShapesInputChannel()
+    toShapesInputHeight()
+    toShapesInputWidth()
+    resetCopyButton()
   }
 
   function toShapesInputChannel() {
-    txt = inputChannel.value;
-    shapesInputChannel.innerText = txt;
+    txt = inputChannel.value
+    shapesInputChannel.innerText = txt
   }
 
   function toShapesInputHeight() {
-    txt = inputHeight.value;
-    shapesInputHeight.innerText = txt;
+    txt = inputHeight.value
+    shapesInputHeight.innerText = txt
   }
 
   function toShapesInputWidth() {
-    txt = inputWidth.value;
-    shapesInputWidth.innerText = txt;
+    txt = inputWidth.value
+    shapesInputWidth.innerText = txt
   }
 
 
-  const convChannel = document.getElementById('convChannel');
-  const convKernel = document.getElementById('convKernel');
-  const convPadding = document.getElementById('convPadding');
-  const convStride = document.getElementById('convStride');
+  const convChannel = document.getElementById('convChannel')
+  const convKernel = document.getElementById('convKernel')
+  const convPadding = document.getElementById('convPadding')
+  const convStride = document.getElementById('convStride')
 
-  const shapesOutputChannel = document.getElementById('shapesOutputChannel');
-  const shapesOutputHeight = document.getElementById('shapesOutputHeight');
-  const shapesOutputWidth = document.getElementById('shapesOutputWidth');
+  const shapesOutputChannel = document.getElementById('shapesOutputChannel')
+  const shapesOutputHeight = document.getElementById('shapesOutputHeight')
+  const shapesOutputWidth = document.getElementById('shapesOutputWidth')
 
-  convChannel.addEventListener('change', toShapesOutputChannel);
-  convKernel.addEventListener('change', updateAll);
-  convPadding.addEventListener('change', updateAll);
-  convStride.addEventListener('change', updateAll);
+  convChannel.addEventListener('change', toShapesOutput)
+  convKernel.addEventListener('change', toShapesOutput)
+  convPadding.addEventListener('change', toShapesOutput)
+  convStride.addEventListener('change', toShapesOutput)
 
   function toShapesOutputChannel() {
-    txt = convChannel.value;
-    shapesOutputChannel.innerText = txt;
+    txt = convChannel.value
+    shapesOutputChannel.innerText = txt
   }
 
   function toShapesOutput() {
-    toShapesOutputHeight();
-    toShapesOutputWidth();
+    toShapesOutputHeight()
+    toShapesOutputWidth()
+    toShapesOutputChannel()
+    resetCopyButton()
   }
 
   function toShapesOutputHeight() {
-    input = inputHeight.value;
-    output = calc(input);
-    shapesOutputHeight.innerText = output;
+    input = inputHeight.value
+    output = calc(input)
+    shapesOutputHeight.innerText = output
   }
 
   function toShapesOutputWidth() {
-    input = inputWidth.value;
-    output = calc(input);
-    shapesOutputWidth.innerText = output;
+    input = inputWidth.value
+    output = calc(input)
+    shapesOutputWidth.innerText = output
   }
 
   function calc(input) {
@@ -301,7 +303,7 @@
     return output
   }
 
-  const copyButton = document.getElementById('copyButton');
+  const copyButton = document.getElementById('copyButton')
 
   function copyShapes() {
     inputChannelValue = shapesInputChannel.innerText 
@@ -311,9 +313,13 @@
     outputHeightValue = shapesOutputHeight.innerText 
     outputWidthValue = shapesOutputWidth.innerText 
 
-    const txt = new String(`${inputChannelValue}x${inputHeightValue}x${inputWidthValue} -> ${outputChannelValue}x${outputHeightValue}x${outputWidthValue}`);
-    navigator.clipboard.writeText(txt);
-    copyButton.innerText = `${outputChannelValue}×${outputHeightValue}×${outputWidthValue}`
+    const txt = new String(`${inputChannelValue}x${inputHeightValue}x${inputWidthValue} -> ${outputChannelValue}x${outputHeightValue}x${outputWidthValue}`)
+    navigator.clipboard.writeText(txt)
+    copyButton.innerText = `Copied ✔`
+  }
+
+  function resetCopyButton() {
+    copyButton.innerText = `Copy`
   }
 
   function setInput() {
