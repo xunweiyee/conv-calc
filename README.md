@@ -1,3 +1,1 @@
-# conv_calc
-
-Convolution neural network calculator.
+# Convolution neural network calculator
